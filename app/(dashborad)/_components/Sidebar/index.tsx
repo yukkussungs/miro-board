@@ -1,5 +1,5 @@
 import { NewButton } from "./new-button"
-import { List } from "./list";;
+import { List } from "./list";
 
 export const Sidebar = () => {
     return (
