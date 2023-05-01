@@ -9,13 +9,14 @@ const convex = new ConvexHttpClient(
 );
 
 const liveblocks = new Liveblocks({
-  secret: process.env.LIVEBLOCKS_KEY,
+  secret: process.env.NEXT_PUBLIC_LIVEBLOCKS_KEY!,
 });
+
 
 export async function POST(request: Request) {
   const authorization = await auth();
   const user = await currentUser();
-
+  
   if (!authorization || !user) {
     return new Response("Unauthorized", { status: 403 });
   }
