@@ -127,3 +127,5 @@ export type Color = {
     Pencil,
   };
   
+
+  export type Layer = RectangleLayer | EllipseLayer | PathLayer | TextLayer | NoteLayer
