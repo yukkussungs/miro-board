@@ -7,7 +7,7 @@ import {
     Dialog,
     DialogContent,
     DialogTrigger,
-} from "@/Components/ui/dialog";
+} from "@/components/ui/dialog";
 import { Hint } from "@/components/hint";
 
 

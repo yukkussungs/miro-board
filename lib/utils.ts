@@ -4,6 +4,9 @@ import { twMerge } from "tailwind-merge";
 import { 
   Camera, 
   Color, 
+  Layer, 
+  LayerType, 
+  PathLayer, 
   Point, 
   Side, 
   XYWH
@@ -20,7 +23,6 @@ const COLORS = [
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-
 
 export function connectionIdToColor(connectionId: number): string {
   return COLORS[connectionId % COLORS.length];
@@ -87,13 +89,18 @@ export function findIntersectingLayersWithRectangle(
     width: Math.abs(a.x - b.x),
     height: Math.abs(a.y - b.y),
   };
+
   const ids = [];
+
   for (const layerId of layerIds) {
     const layer = layers.get(layerId);
+
     if (layer == null) {
       continue;
     }
+
     const { x, y, height, width } = layer;
+
     if (
       rect.x + rect.width > x &&
       rect.x < x + width && 
@@ -112,7 +119,6 @@ export function getContrastingTextColor(color: Color) {
 
   return luminance > 182 ? "black" : "white";
 };
-
 
 export function penPointsToPathLayer(
   points: number[][],
