@@ -8,8 +8,7 @@ import { createRoomContext, createLiveblocksContext } from "@liveblocks/react";
 import { Layer, Color } from "@/types/canvas";
 
 const client = createClient({
-  publicApiKey: "pk_dev_-wSVjdpIet9et5SWciUyN7k2_SF5EM--nwo3qVfeScm7h9KIJfXq6W1CMNIYOxZT",
-  // authEndpoint: "/api/liveblocks-auth",
+  authEndpoint: "/api/liveblocks-auth",
   throttle: 16,
   async resolveUsers({ userIds }) {
     // Used only for Comments and Notifications. Return a list of user information

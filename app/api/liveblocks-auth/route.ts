@@ -9,7 +9,7 @@ const convex = new ConvexHttpClient(
 );
 
 const liveblocks = new Liveblocks({
-  secret: process.env.NEXT_PUBLIC_LIVEBLOCKS_KEY!,
+  secret: process.env.LIVEBLOCKS_SECRET_KEY!,
 });
 
 
